@@ -1,0 +1,14 @@
+#!/bin/bash
+DIR="$(cd "$(dirname "$0")" && pwd)"
+SCRIPT="$DIR/../Resources/json_cleaner.py"
+
+# Use the best available Python with tkinter support
+if [ -x "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3" ]; then
+    PYTHON="/Library/Frameworks/Python.framework/Versions/3.11/bin/python3"
+elif [ -x "/usr/local/bin/python3" ]; then
+    PYTHON="/usr/local/bin/python3"
+else
+    PYTHON="/usr/bin/python3"
+fi
+
+exec "$PYTHON" -u "$SCRIPT" 2>/tmp/jsoncleaner_error.log
