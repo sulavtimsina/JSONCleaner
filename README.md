@@ -9,24 +9,24 @@ A macOS app that redacts long string values from JSON and cURL commands copied t
 - **Replacement format**: `<first 10 chars>_REDACTED_BECAUSE_TOO_LONG`
 - **Auto-copy**: Cleaned output is automatically copied to the clipboard
 
-## Installation
+## Quick Install
 
-To build the `.app` bundle manually:
+Run this in Terminal to download and install the app:
 
-```
-JSONCleaner.app/
-  Contents/
-    Info.plist
-    MacOS/
-      run          # bash launcher script
-    Resources/
-      json_cleaner.py
+```bash
+cd ~/Desktop && curl -L https://github.com/sulavtimsina/JSONCleaner/archive/refs/heads/main.zip -o /tmp/JSONCleaner.zip && unzip -o /tmp/JSONCleaner.zip -d /tmp && cp -R /tmp/JSONCleaner-main/JSONCleaner.app ~/Desktop/ && chmod +x ~/Desktop/JSONCleaner.app/Contents/MacOS/run && rm /tmp/JSONCleaner.zip && rm -rf /tmp/JSONCleaner-main && open ~/Desktop/JSONCleaner.app
 ```
 
-1. Create the directory structure above
-2. Place the files in their respective locations
-3. Make `run` executable: `chmod +x JSONCleaner.app/Contents/MacOS/run`
+This downloads the app to your Desktop and launches it.
+
+## Manual Install
+
+1. [Download the repo as ZIP](https://github.com/sulavtimsina/JSONCleaner/archive/refs/heads/main.zip)
+2. Unzip and copy `JSONCleaner.app` to your Desktop (or Applications folder)
+3. Open Terminal and run: `chmod +x ~/Desktop/JSONCleaner.app/Contents/MacOS/run`
 4. Double-click `JSONCleaner.app` to launch
+
+> **Note**: The `chmod` step is required because GitHub does not preserve executable permissions in ZIP downloads.
 
 ## Requirements
 
